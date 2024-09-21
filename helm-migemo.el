@@ -5,7 +5,7 @@
 ;; Author: rubikitch <rubikitch@ruby-lang.org>
 ;; Maintainer: Yuhei Maeda <yuhei.maeda_at_gmail.com>
 ;; Version: 1.22
-;; Package-Requires: ((emacs "24.4") (helm-core "1.7.8") (migemo "1.9") (cl-lib "0.5"))
+;; Package-Requires: ((emacs "25.1") (helm "1.7.8") (migemo "1.9"))
 ;; Created: 2009-04-13
 ;; Keywords: matching, convenience, tools, i18n
 ;; URL: https://github.com/emacs-jp/helm-migemo
@@ -121,7 +121,7 @@ With prefix arugument, `helm-pattern' is migemo-ized, otherwise normal `helm'."
                   `(match ,matcher))
                ,@source))
             (t source)))))
-(add-to-list 'helm-compile-source-functions 'helm-compile-source--migemo t)
+;;(add-to-list 'helm-compile-source-functions 'helm-compile-source--migemo t)
 
 (defvar helm-migemize-command-idle-delay 0.1
   "`helm-idle-delay' for migemized command.")
