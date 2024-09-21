@@ -121,7 +121,10 @@ With prefix arugument, `helm-pattern' is migemo-ized, otherwise normal `helm'."
                   `(match ,matcher))
                ,@source))
             (t source)))))
-;;(add-to-list 'helm-compile-source-functions 'helm-compile-source--migemo t)
+
+;; helm-compile-source-functions is removed from newer helm
+(when (bound-and-true-p helm-compile-source-functions)
+  (add-to-list 'helm-compile-source-functions 'helm-compile-source--migemo t))
 
 (defvar helm-migemize-command-idle-delay 0.1
   "`helm-idle-delay' for migemized command.")
